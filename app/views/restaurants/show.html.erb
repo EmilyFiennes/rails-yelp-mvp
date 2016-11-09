@@ -1,0 +1,17 @@
+<% content_for(:title) do %>
+  <%= @restaurant.name %> is on Yelp %>
+<% end %>
+
+
+<h1 class="text-center"><%=@restaurant.name%></h1>
+<h3 class="text-center">Address: <%=@restaurant.address%> Tel: <%=@restaurant.phone_number%></h3>
+
+<%=link_to "REVIEW", new_restaurant_review_path(@restaurant)%>
+<%=link_to "Back to all restaurants", restaurants_path %>
+
+<div class="text_center" %>
+<% @restaurant.reviews.each do |review| %>
+    <li> <%= review.content %> </li>
+    <li> <%= review.created_at %> </li>
+  <% end %>
+</div>

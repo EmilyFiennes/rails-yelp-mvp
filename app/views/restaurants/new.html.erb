@@ -1,12 +1,14 @@
-<h1>New restaurant form</h1>
 
+<h2 class="text-center">New restaurant form</h2>
+<div class="form">
 <%= simple_form_for(@restaurant) do |f| %>
   <%= f.error_notification %>
 
   <%= f.input :name %>
   <%= f.input :address %>
   <%= f.input :phone_number %>
-  <%= f.input :category %>
+  <%= f.input :category, collection: Restaurant::CATEGORY , prompt: "Choose a category", selected: "Chinese"%>
 
   <%= f.button :submit %>
 <% end %>
+</div>

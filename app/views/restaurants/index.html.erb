@@ -4,8 +4,12 @@
 
 <ol>
   <% @restaurants.each do |restaurant| %>
-      <li><strong><%= restaurant.name %></strong></li>
+      <li><strong><%= restaurant.name %></strong>
       <p>Contact: <%= restaurant.phone_number %></p>
+      <span><%= link_to "REVIEW", new_restaurant_review_path(restaurant), {class: "label label-primary"}%></span>
+      <span><%= link_to "VIEW", restaurant_path(restaurant), {class: "label label-primary"}%></span>
+      </li>
+      <hr>
   <% end %>
   </ol>
 
